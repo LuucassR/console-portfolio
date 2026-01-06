@@ -1,6 +1,7 @@
 import "./App.css";
 import ResumeComponent from "../components/Cv";
 import TypeStartInfo from "../components/typeStartInfo";
+import emailjs from "@emailjs/browser";
 import { useState, useEffect, useRef } from "react";
 import {
   Code,
@@ -12,7 +13,8 @@ import {
   ChevronDown,
   Layers,
   Zap,
-  Monitor,
+  Newspaper,
+  Send
 } from "lucide-react";
 
 // Hook para detectar cuando un elemento entra en el viewport (Scroll Reveal)
@@ -105,37 +107,37 @@ const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
           </code>
         </div>
 
-        <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-slate-400 max-w-screen text-lg md:text-xl sm:text-lg mx-auto mb-10 leading-relaxed">
           Transformo ideas en experiencias web interactivas , especializado en
           crear interfaces limpias, rápidas y escalables.
         </p>
 
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-4 justify-self-center">
           <button
             onClick={onScrollToDemo}
-            className="bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-blue-500/25"
+            className="bg-blue-600 max-w-fit hover:bg-blue-700 justify-center cursor-pointer text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-blue-500/25"
           >
             <Code size={20} />
-            Demos
+            <p>Demos</p>
           </button>
           <button
             onClick={onScrollToCv}
-            className="bg-[#ff713e] cursor-pointer hover:bg-[#ff581b] text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-[#ff581b]/50"
+            className="bg-[#ff713e] max-w-fit sm:max-w-screen justify-center cursor-pointer hover:bg-[#ff581b] text-center text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 shadow-lg shadow-[#ff581b]/50"
           >
-            <Code size={20} />
-            CV
+            <Newspaper size={18}/>
+            <p>Cv</p>
           </button>
           <a
             href="#contact"
-            className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 border border-slate-700"
+            className="bg-slate-800 justify-center max-w-fit hover:bg-slate-700 text-white text-center px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 border border-slate-700"
           >
             <Mail size={20} />
-            Contactar
+            <p>Contactar</p>
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 animate-bounce text-slate-500">
+      <div className="absolute bottom-5 animate-bounce text-slate-500">
         <ChevronDown size={32} />
       </div>
     </section>
@@ -346,70 +348,105 @@ const Cv = () => {
 };
 
 // 4. Sección de Contacto
-const Contact = () => (
-  <section
-    id="contact"
-    className="py-20 px-4 bg-linear-to-t from-black to-slate-900 relative overflow-hidden"
-  >
-    {/* Fondo decorativo */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-blue-500/5 blur-3xl pointer-events-none rounded-full"></div>
+const Contact = () => {
+  const form = useRef<any>(null);
+  const [status, setStatus] = useState(""); // para mostrar mensajes de éxito/error
 
-    <div className="max-w-3xl mx-auto text-center relative z-10">
-      <RevealOnScroll>
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          ¿Creamos algo increíble?
-        </h2>
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    setStatus("enviando");
+
+    emailjs
+      .sendForm(
+        "service_kyx6uok",   // Reemplaza con el tuyo
+        "template_y5ay96r",  // Reemplaza con el tuyo
+        form.current,
+        "TsFTR12HDnn6acXuL"    // Reemplaza con el tuyo
+      )
+      .then(
+        () => {
+          setStatus("exito");
+          form.current.reset(); // Limpia el formulario
+        },
+        (error) => {
+          setStatus("error");
+          console.log("Fallo...", error.text);
+        }
+      );
+  };
+
+  return (
+    <section id="contact" className="py-20 px-4 bg-linear-to-t from-black to-slate-900 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-blue-500/5 blur-3xl pointer-events-none rounded-full"></div>
+
+      <div className="max-w-3xl mx-auto text-center relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">¿Creamos algo increíble?</h2>
         <p className="text-slate-400 text-lg mb-10">
-          Estoy buscando nuevas oportunidades como Desarrollador Front-End.
-          <br></br>
-          Tenes un pryecto en mente?
-          <br></br>
-          Contáctame.
+          Tenes un proyecto en mente? Contáctame.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
-          <a
-            href="mailto:tuemail@ejemplo.com"
-            className="flex items-center justify-center gap-3 bg-white text-slate-900 px-6 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
+        {/* Formulario mejorado */}
+        <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto space-y-4 mb-12">
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Tu Nombre"
+            required
+            className="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Tu Email"
+            required
+            className="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          <textarea
+            name="message"
+            placeholder="Tu Mensaje (Puedes dejar tu numero aqui o contactarme por whatsapp y te respondere lo antes posible)"
+            required
+            // @ts-ignore
+            rows="4"
+            className="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+          />
+          
+          <button
+            type="submit"
+            disabled={status === "enviando"}
+            className="w-full flex items-center justify-center gap-3 bg-blue-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all disabled:opacity-50"
           >
-            <Mail className="text-slate-900" />
-            Enviar Correo
-          </a>
-          <a
-            href="https://wa.me/1234567890"
+            {status === "enviando" ? "Enviando..." : <><Send size={20} /> Enviar Mensaje</>}
+          </button>
+
+          {status === "exito" && <p className="text-green-400 mt-2">¡Mensaje enviado con éxito!</p>}
+          {status === "error" && <p className="text-red-400 mt-2">Hubo un error, intenta de nuevo.</p>}
+        </form>
+
+        {/* Tus enlaces originales como respaldo */}
+        <div className="flex flex-wrap justify-center gap-4 max-w-lg mx-auto">
+           <a
+            href="https://wa.me/3425594220"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-green-500/20"
+            className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform"
           >
-            <Smartphone />
-            WhatsApp
+            <Smartphone size={20} /> WhatsApp
           </a>
         </div>
-
+        
+        {/* Redes Sociales */}
         <div className="mt-12 flex justify-center gap-8 border-t border-slate-800 pt-8">
-          <a
-            href="#"
-            className="text-slate-500 hover:text-white transition-colors"
-          >
+          <a href="https://github.com/LuucassR" className="text-slate-500 hover:text-white transition-colors">
             <Github size={24} />
           </a>
-          <a
-            href="#"
-            className="text-slate-500 hover:text-white transition-colors"
-          >
+          <a href="https://www.linkedin.com/in/lucas-rossi-052926389/" className="text-slate-500 hover:text-white transition-colors">
             <Linkedin size={24} />
           </a>
-          <a
-            href="#"
-            className="text-slate-500 hover:text-white transition-colors"
-          >
-            <Monitor size={24} />
-          </a>
         </div>
-      </RevealOnScroll>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 // --- Componente Principal ---
 
@@ -474,7 +511,8 @@ export default function App() {
       <footer className="bg-black py-6 text-center text-slate-600 text-sm">
         <p>
           &copy; {new Date().getFullYear()} Creado con React & Tailwind.
-          Inspirado en The Odin Project.
+          Inspirado en The Odin Project. <br />
+           --- By Rossi Lucas ---
         </p>
       </footer>
     </div>
