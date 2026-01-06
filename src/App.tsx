@@ -40,7 +40,7 @@ export const useOnScreen = (
 // --- Componentes UI ---
 
 // Componente Wrapper para animaciones al hacer scroll
-const RevealOnScroll = ({ children, delay = 0 }: any) => {
+export const RevealOnScroll = ({ children, delay = 0 }: any) => {
   const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
 
   return (

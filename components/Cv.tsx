@@ -3,7 +3,7 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 import Typewriter from "typewriter-effect";
 
 // Componente auxiliar para manejar el delay aleatorio por cada texto
-const Type = ({ text, delay = 200, speed = 40, className = "" }: any) => {
+const Type = ({ text, delay = 100, speed = 2, className = "" }: any) => {
   const [start, setStart] = useState(false);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ResumeComponent = () => {
     name: "Rossi Lucas",
     title: "Front-End developer",
     contact: {
-      email: "lucassrossi12@mail.com",
+      email: "lucassrossi12@gmail.com",
       phone: "+54 342 559-4220",
       linkedin: "linkedin.com/in/lucas-rossi-052926389/",
     },
@@ -82,13 +82,31 @@ const ResumeComponent = () => {
         </div>
         <div className="text-right space-y-1 text-sm text-gray-600">
           <div className="flex items-center justify-end gap-3">
-            <Type text={data.contact.email} delay={800} /> <Mail size={14} />
+            <a
+              className="text-slate-900 font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black"
+              href="mailto:lucassrossi12@gmail.com?"
+            >
+              {" "}
+              <Type text={data.contact.email} speed={50} delay={800} />
+            </a>
+            <Mail size={14} />
           </div>
           <div className="flex items-center justify-end gap-3">
-            <Type text={data.contact.phone} delay={1200} /> <Phone size={14} />
+            <a
+              className="text-slate-900 font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black"
+              href="https://wa.me/3425594220"
+            >
+              <Type text={data.contact.phone} speed={50} delay={1200} />
+            </a>{" "}
+            <Phone size={14} />
           </div>
           <div className="flex items-center justify-end gap-3">
-            <Type text={data.contact.linkedin} delay={1500} />{" "}
+            <a
+              className="text-slate-900 font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black"
+              href="https://www.linkedin.com/in/lucas-rossi-052926389/"
+            >
+              <Type text={data.contact.linkedin} speed={50} delay={1500} />{" "}
+            </a>
             <Linkedin size={14} />
           </div>
         </div>
@@ -106,10 +124,13 @@ const ResumeComponent = () => {
                 <Type
                   text={edu.asignation}
                   className="text-[13px] font-bold"
-                  delay={200 * i}
+                  delay={200}
                 />
                 <div className="text-[12px] text-gray-600 italic">
-                  <Type text={edu.school} delay={400 * i} />
+                  <Type text={edu.school} delay={100} />
+                </div>
+                <div className="text-[12px] text-gray-600 italic">
+                  <Type text={edu.year} delay={100} />
                 </div>
               </div>
             ))}
@@ -123,7 +144,7 @@ const ResumeComponent = () => {
               {data.skills.map((skill, i) => (
                 <li key={i} className="text-[12px] flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                  <Type text={skill} delay={100 * i} speed={20} />
+                  <Type text={skill} delay={200 * i} speed={100} />
                 </li>
               ))}
             </ul>
@@ -137,7 +158,7 @@ const ResumeComponent = () => {
               {data.languages.map((language, i) => (
                 <li key={i} className="text-[12px] flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                  <Type text={language} delay={100 * i} speed={20} />
+                  <Type text={language} delay={200 * i} speed={100} />
                 </li>
               ))}
             </ul>
@@ -151,7 +172,12 @@ const ResumeComponent = () => {
               {data.certificates.map((certificate, i) => (
                 <li key={i} className="text-[12px] flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                  <Type className="text-slate-900 font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black" text={certificate} delay={100 * i} speed={20} />
+                  <Type
+                    className="text-slate-900 font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black"
+                    text={certificate}
+                    delay={200 * i}
+                    speed={100}
+                  />
                 </li>
               ))}
             </ul>
@@ -165,7 +191,7 @@ const ResumeComponent = () => {
               PERFIL PROFECIONAL
             </h2>
             <div className="text-[12px] leading-relaxed text-gray-700 italic">
-              <Type text={data.profile} delay={1000} speed={10} />
+              <Type text={data.profile} delay={1500} speed={20} />
             </div>
           </section>
         </div>
