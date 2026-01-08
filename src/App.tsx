@@ -9,7 +9,6 @@ import {
   Linkedin,
   Mail,
   Smartphone,
-  ChevronDown,
   Layers,
   Zap,
   Newspaper,
