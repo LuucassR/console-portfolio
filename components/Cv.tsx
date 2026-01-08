@@ -37,75 +37,78 @@ const Type = ({ text, delay = 100, speed = 2, className = "" }: any) => {
 };
 
 const ResumeComponent = () => {
-  const data = {
-    name: "Rossi Lucas",
-    title: "Front-End developer",
-    contact: {
-      email: "lucassrossi12@gmail.com",
-      phone: "+54 342 559-4220",
-      linkedin: "/lucas-rossi-052926389",
+const data = {
+  name: "Rossi Lucas",
+  title: "Front-End Developer",
+  contact: {
+    email: "lucassrossi12@gmail.com",
+    phone: "+54 342 559-4220",
+    linkedin: "/lucas-rossi-052926389",
+  },
+  education: [
+    {
+      school: "Primaria Centro Educativo Jerárquicos",
+      year: "2011 - 2018",
     },
-    education: [
-      {
-        asignation: "Naturales",
-        school: "Centro Educativo Jerarquicos",
-        year: "2018-2023",
-      },
-    ],
-    skills: [
-      "Resolucion de problemas",
-      "Pensamiento Critico",
-      "Trabajo en equipo",
-      "Responsabilidad",
-    ],
-    languages: ["Español ( Nativo )", "Ingles (Avanzado)"],
-    certificates: [
-      "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50'X</a>: Computer Science",
-      "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50'X</a>: Data Bases",
-      "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50'X</a>: Programming With Python",
-    ],
-    profile:
-      "Mi objetivo es dar una vision general de mis habilidades como programador de páginas web, busco que se sietan seguros con que el trabajo va a ser hecho de manera excelente y demostrar que valgo la pena, busco ampliar siempre mis conocimientos y trabajar en todos los proyectos que pueda",
-    technologies: [
-      "React",
-      "JavaScript(ES6+)",
-      "TypeScript",
-      "Tailwind",
-      "HTML5",
-      "CSS",
-      "Git/Github",
-      "SQLite",
-      "Postgres",
-      "Node.js",
-      "Express.js",
-    ],
-    exprerince: {
-      python: {
-        text: "Mi formación en Python consistió en un programa intensivo de 9 secciones de actividades prácticas. Durante este proceso, logré consolidar el uso de estructuras de datos, lógica de programación y la aplicación de conceptos fundamentales para resolver problemas mediante código limpio y eficiente.",
-      },
+    {
+      school: "Secundaria Centro Educativo Jerárquicos",
+      year: "2018 - 2023",
+    },
+  ],
+  skills: [
+    "Resolución de problemas",
+    "Pensamiento crítico",
+    "Trabajo en equipo",
+    "Responsabilidad",
+  ],
+  languages: ["Español (Nativo)", "Inglés (Avanzado)"],
+  certificates: [
+    "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50x</a>: Computer Science",
+    "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50x</a>: Databases",
+    "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50x</a>: Programming with Python",
+  ],
+  profile:
+    "Mi objetivo es dar una visión general de mis habilidades como programador de páginas web. Busco que se sientan seguros de que el trabajo será realizado de manera excelente y efectiva, siempre enfocándome en nuevos escenarios y ampliando constantemente mis áreas de conocimiento.",
+  technologies: [
+    "React",
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "Tailwind",
+    "HTML5",
+    "CSS",
+    "Git/GitHub",
+    "SQLite",
+    "PostgreSQL",
+    "Node.js",
+    "Express.js",
+  ],
+  experience: {
+    python: {
+      text: "Mi formación en Python consistió en un programa intensivo de 9 secciones con actividades prácticas. Durante este proceso, logré consolidar el uso de estructuras de datos, lógica de programación y la aplicación de conceptos fundamentales para resolver problemas mediante código limpio y eficiente.",
+    },
 
-      dataCience: {
-        text: "A través de 10 problemas y un proyecto final, me introduje en la programación de bajo nivel utilizando C. Este curso fue fundamental para establecer las bases de mi carrera, enseñándome sobre tecnologías actuales e Inteligencia Artificial, pero sobre todo, a desarrollar un pensamiento crítico para resolver problemas técnicos.",
-      },
-      dataBases: {
-        text: "He desarrollado una sólida capacidad para gestionar información de manera efectiva. Gracias a mi formación y al trabajo en 'The Odin Project', domino el manejo de PostgreSQL, incluyendo la creación, administración, relación y consulta de datos para integrar esta información en aplicaciones funcionales.",
-      },
+    dataScience: {
+      text: "A través de 10 problemas y un proyecto final, me introduje en la programación de bajo nivel utilizando C. Este curso fue fundamental para establecer las bases de mi carrera, enseñándome sobre tecnologías actuales e inteligencia artificial, pero principalmente a desarrollar pensamiento crítico enfocado en problemas técnicos.",
     },
-    projects: {
-      python: {
-        text: "Tras completar 9 secciones de actividades prácticas, culminé mi certificación con un RPG de terminal. Este proyecto integra diversos conceptos avanzados: gestión de personajes y enemigos, un sistema de experiencia y estadísticas, habilidades únicas y un enfrentamiento con un jefe final. Es una muestra integral de mi capacidad para estructurar código y manejar lógica de videojuegos en Python.",
-        finalProjectUrl: "https://github.com/LuucassR/pyhton-final-project",
-      },
-      dataCience: {
-        text: "Como cierre de mi etapa en programación de bajo nivel, diseñé una página web que representa mi punto de partida en el desarrollo. Aunque es un proyecto inicial, la mantengo como una métrica de mi evolución técnica y de mi capacidad para adoptar nuevas tecnologías desde cero.",
-        finalProjectUrl: "https://github.com/LuucassR/data-cience-final-project",
-      },
-      dataBases: {
-        text: "Este proyecto demuestra mi habilidad para estructurar bases de datos relacionales y realizar consultas complejas. Está enfocado en cómo administrar, modificar y buscar elementos de manera óptima para luego presentar esos datos de forma clara al usuario final.",
-        finalProjectUrl: "https://github.com/LuucassR/sql-final-project",
-      },
+    databases: {
+      text: "He desarrollado una sólida capacidad para gestionar información de manera efectiva. Gracias a mi formación y al trabajo en The Odin Project, domino el manejo de PostgreSQL, incluyendo la creación, administración, relación y consulta de datos para integrar esta información en aplicaciones funcionales.",
     },
-  };
+  },
+  projects: {
+    python: {
+      text: "Tras completar 9 secciones de actividades prácticas, culminé mi certificación con un RPG de terminal. Este proyecto integra diversos conceptos avanzados: gestión de personajes y enemigos, un sistema de experiencia y estadísticas, habilidades únicas y un enfrentamiento con un jefe final. Es una muestra integral de mi capacidad para estructurar código y manejar la lógica de videojuegos en Python.",
+      finalProjectUrl: "https://github.com/LuucassR/python-final-project",
+    },
+    dataScience: {
+      text: "Como cierre de mi etapa en programación de bajo nivel, diseñé una página web que representa mi punto de partida en el desarrollo. Aunque es un proyecto inicial, la mantengo como una métrica de mi evolución técnica y de mi capacidad para adoptar nuevas tecnologías desde cero.",
+      finalProjectUrl: "https://github.com/LuucassR/data-science-final-project",
+    },
+    databases: {
+      text: "Este proyecto demuestra mi habilidad para estructurar bases de datos relacionales y realizar consultas complejas. Está enfocado en cómo administrar, modificar y buscar elementos de manera óptima para luego presentar esos datos de forma clara al usuario final.",
+      finalProjectUrl: "https://github.com/LuucassR/sql-final-project",
+    },
+  },
+};
 
   return (
     <div className="max-w-212.5 mx-auto my-10 bg-white p-12 shadow-lg border border-gray-200 text-slate-800 font-sans leading-tight">
@@ -155,16 +158,11 @@ const ResumeComponent = () => {
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-5 space-y-12">
           <section>
             <h2 className="text-2xl font-bold tracking-[0.15em] border-b border-gray-300 pb-1 mb-4 text-gray-400">
-              EDUCACION
+              EDUCACIÓN
             </h2>
             {data.education.map((edu, i) => (
               <div key={i} className="mb-4">
-                <Type
-                  text={edu.asignation}
-                  className="text-[20px] font-bold"
-                  delay={200}
-                />
-                <div className="text-[18px] text-gray-600 italic">
+                <div className="text-[16px] text-gray-600 italic">
                   <Type text={edu.school} delay={100} />
                 </div>
                 <div className="text-[16px] text-gray-600 italic">
@@ -223,7 +221,7 @@ const ResumeComponent = () => {
 
           <section>
             <h2 className="text-2xl font-bold tracking-[0.15em] border-b border-gray-300 pb-1 mb-4 text-gray-400">
-              Stack Tecnologico
+              STACK TECNOLOGICOS
             </h2>
             <div className="text-[20px] leading-relaxed text-gray-700 italic">
               <ul className="grid grid-cols-2 space-y-2">
@@ -254,19 +252,19 @@ const ResumeComponent = () => {
             </h2>
             <div className="text-[16px] leading-5 text-gray-700 italic">
               <Type
-                text={data.exprerince.python.text}
+                text={data.experience.python.text}
                 delay={1500}
                 speed={20}
               />
               <br />
               <Type
-                text={data.exprerince.dataBases.text}
+                text={data.experience.databases.text}
                 delay={1500}
                 speed={20}
               />
               <br />
               <Type
-                text={data.exprerince.dataCience.text}
+                text={data.experience.dataScience.text}
                 delay={1500}
                 speed={20}
               />
@@ -281,11 +279,11 @@ const ResumeComponent = () => {
               <Type text={data.projects.python.text} delay={1500} speed={20} />
               <a className="text-slate-900 underline font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black" href={data.projects.python.finalProjectUrl}><Type text={"Python Final Project"} delay={1500} speed={20} /></a>
               <br />
-              <Type text={data.projects.dataBases.text} delay={1500} speed={20} />
-              <a className="text-slate-900 underline font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black" href={data.projects.dataBases.finalProjectUrl}><Type text={"Data Bases Final Project"} delay={1500} speed={20} /></a>
+              <Type text={data.projects.databases.text} delay={1500} speed={20} />
+              <a className="text-slate-900 underline font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black" href={data.projects.databases.finalProjectUrl}><Type text={"Data Bases Final Project"} delay={1500} speed={20} /></a>
               <br />
-              <Type text={data.projects.dataCience.text} delay={1500} speed={20} />
-              <a className="text-slate-900 underline font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black" href={data.projects.dataCience.finalProjectUrl}><Type text={"Data Cience Final Project"} delay={1500} speed={20} /></a>
+              <Type text={data.projects.dataScience.text} delay={1500} speed={20} />
+              <a className="text-slate-900 underline font-medium transition-all duration-300 border-b border-transparent hover:border-slate-900 hover:text-black" href={data.projects.dataScience.finalProjectUrl}><Type text={"Data Cience Final Project"} delay={1500} speed={20} /></a>
             </div>
           </section>
         </div>
