@@ -131,7 +131,7 @@ const data = {
               {" "}
               <Type text={data.contact.email} speed={50} delay={800} />
             </a>
-            <Mail size={14} />
+            <Mail size={14}  className="min-w-3.5" />
           </div>
           <div className="flex items-center justify-end gap-3">
             <a
@@ -140,7 +140,7 @@ const data = {
             >
               <Type text={data.contact.phone} speed={50} delay={1200} />
             </a>{" "}
-            <Phone size={14} />
+            <Phone size={14} className="min-w-3.5" />
           </div>
           <div className="flex items-center justify-end gap-3">
             <a
@@ -149,7 +149,7 @@ const data = {
             >
               <Type text={data.contact.linkedin} speed={50} delay={1500} />{" "}
             </a>
-            <Linkedin size={14} />
+            <Linkedin size={14} className="min-w-3.5" />
           </div>
         </div>
       </div>

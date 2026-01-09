@@ -86,9 +86,9 @@ const Hero = ({ onScrollToDemo, onScrollToCv }: any) => {
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+        <h1 className="text-4xl md:text-7xl font-bold text-white tracking-tight">
           Hola, soy
-          <div className="mt-5">
+          <div className="mb-2 mt-2">
             <TypeStartInfo />
           </div>
         </h1>
