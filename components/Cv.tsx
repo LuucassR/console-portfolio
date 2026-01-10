@@ -64,8 +64,8 @@ const data = {
   languages: ["Español (Nativo)", "Inglés (Avanzado)"],
   certificates: [
     "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50x</a>: Computer Science",
-    "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50x</a>: Databases",
-    "<a href='https://cs50.harvard.edu/certificates/73b360d7-e6bc-480d-987c-181d4f085e4e.png?size=letter'>CS50x</a>: Programming with Python",
+    "<a href='https://cs50.harvard.edu/certificates/903c093e-8608-4cf1-a4d6-494c6e12f11e'>CS50x</a>: Databases",
+    "<a href='https://cs50.harvard.edu/certificates/589dffe6-75c2-4378-a2d1-28221840db3c'>CS50x</a>: Programming with Python",
   ],
   profile:
     "Mi objetivo es dar una visión general de mis habilidades como programador de páginas web. Busco que se sientan seguros de que el trabajo será realizado de manera excelente y efectiva, siempre enfocándome en nuevos escenarios y ampliando constantemente mis áreas de conocimiento.",
