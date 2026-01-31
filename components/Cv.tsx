@@ -81,6 +81,7 @@ const data = {
     "PostgreSQL",
     "Node.js",
     "Express.js",
+    "Postgres"
   ],
   experience: {
     python: {
