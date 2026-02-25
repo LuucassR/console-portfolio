@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 import { portfolioData } from "../data/data";
 
 export default function Footer() {
@@ -11,22 +11,25 @@ export default function Footer() {
         </p>
         <div className="flex gap-6">
           <a
-            href="#"
+            target="_blank"
+            href="https://github.com/LuucassR"
             className="text-slate-400 hover:text-primary-500 transition-colors"
           >
             <Github className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            target="_blank"
+            href="https://www.linkedin.com/in/lucas-rossi-052926389/"
             className="text-slate-400 hover:text-primary-500 transition-colors"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            target="_blank"
+            href="https://www.instagram.com/lucassrossii_/"
             className="text-slate-400 hover:text-primary-500 transition-colors"
           >
-            <Twitter className="w-5 h-5" />
+            <Instagram className="w-5 h-5" />
           </a>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function CVSection() {
                 <div className="space-y-8 border-l-2 border-slate-100 dark:border-slate-800 ml-3 pl-6">
                   {cvData.sections.certifications.items.map((cert: any) => (
                     <div key={cert.id} className="relative">
-                      <div className="absolute -left-8.25 top-1.5 w-3 h-3 rounded-full bg-blue-600" />
+                      <div className="absolute -left-7.75 top-1.5 w-3 h-3 rounded-full bg-blue-600" />
                       <h5 className="font-bold text-slate-900 dark:text-white">
                         {cert.title}{" "}
                       </h5>
@@ -173,7 +173,7 @@ export default function CVSection() {
                     >
                       <div className="flex justify-between items-start mb-2">
                         <h5 className="font-bold">{proj.name}</h5>
-                        <span className="text-[10px] font-mono bg-blue-100 dark:bg-blue-900 text-blue-600 px-2 py-0.5 rounded">
+                        <span className="text-[10px] font-mono bg-blue-100 dark:bg-blue-800 text-blue-100 px-2 py-0.5 rounded">
                           {proj.period}
                         </span>
                       </div>

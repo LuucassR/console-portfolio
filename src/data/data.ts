@@ -101,7 +101,7 @@ export const portfolioData = {
       title: "Guía Comercial Integral",
       description:
         "Plataforma web diseñada para centralizar negocios locales mediante un sistema de gestión dinámica donde los usuarios administran su presencia.",
-      tech: ["React", "PostgreSQL", "Node.js"],
+      tech: ["React", "PostgreSQL", "Express"],
       demo: "#",
       github: "#",
     },

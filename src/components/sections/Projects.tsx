@@ -8,7 +8,13 @@ import { portfolioData } from "../../data/data";
 // pero asegúrate de que los IDs coincidan con los de tu data.ts
 const projectImages: Record<number, string[]> = {
   1: ["./prello1.png", "./prello2.png", "./prello3.png"],
-  // Si tu primer proyecto tiene id: 10, aquí debe decir 10
+  2: [
+    "./guia_comercial1.png",
+    "./guia_comercial2.png",
+    "./guia_comercial3.png",
+    "./guia_comercial4.png",
+    "./guia_comercial5.png",
+  ],
 };
 
 export default function Projects() {
@@ -59,12 +65,6 @@ function ProjectCard({ project, index }: any) {
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-bold dark:text-white">{project.title}</h3>
         <div className="flex gap-3 text-slate-500">
-          <a
-            href={project.github}
-            className="hover:text-primary-600 transition-colors"
-          >
-            <Github size={18} />
-          </a>
           <a
             href={project.demo}
             className="hover:text-primary-600 transition-colors"
