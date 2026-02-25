@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ArrowRight, ArrowLeft } from "lucide-react";
+import { ExternalLink, ArrowRight, ArrowLeft } from "lucide-react";
 // 1. Asegúrate de que este import sea correcto
 import { portfolioData } from "../../data/data";
 
